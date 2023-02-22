@@ -38,12 +38,13 @@ public class OrderCreatingTest {
         this.order = order;
     }
 
-    @Parameterized.Parameters
-    public static Object[][] data() {
+    @Parameterized.Parameters (name = "Тестовые данные: заказы с тремя опциями цвета самоката" +
+    "colorNum = 0 - цвет не выбран, colorNum = 1 - выбран черный или серый, colorNum = 2 - выбраны оба")
+    public static Object[][] data() throws Exception {
         return new Object[][] {
-                {OrderGenerator.getValidOneColor()},
-                {OrderGenerator.getValidBothColors()},
-                {OrderGenerator.getValidNoColor()}
+                {OrderGenerator.getValid(0)},
+                {OrderGenerator.getValid(1)},
+                {OrderGenerator.getValid(2)}
         };
     }
 
