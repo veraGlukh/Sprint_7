@@ -15,7 +15,7 @@ public class OrderGenerator {
     static int maxRentTime = 7;
     static int maxColorNum = 2;
     static int maxDayAfter = 30;
-    static List<String> randomColor = new ArrayList<>();
+    static List<String> colors = new ArrayList<>();
 
     // Метод создания валидного заказа
     public static Order getValid(int colorNum) throws Exception {
@@ -48,20 +48,20 @@ public class OrderGenerator {
             }
 
         return new Order(randomFirstName, randomLastName, randomAddress, randomMetro, randomPhone, randomRentTime,
-                randomDeliveryDate, randomComment, randomColor);
+                randomDeliveryDate, randomComment, colors);
         }
 
     public static void addOneColor() {
         int color = random.nextInt(maxColorNum);
         if (color == 1) {
-            randomColor.add("BLACK");
+            colors.add("BLACK");
         } else {
-            randomColor.add("GREY");
+            colors.add("GREY");
         }
     }
 
     public static void addBothColors() {
-        randomColor.add("BLACK");
-        randomColor.add("GREY");
+        colors.add("BLACK");
+        colors.add("GREY");
     }
 }
